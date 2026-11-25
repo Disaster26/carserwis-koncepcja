@@ -1,0 +1,492 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex, nofollow" data-podglad>
+<title>Mechanik i wypożyczalnia samochodów Suwałki | CAR SERWIS Szymon Liszewski</title>
+<meta name="description" content="CAR SERWIS Suwałki, Bakałarzewska 84A: naprawy samochodów osobowych, diagnostyka komputerowa, klimatyzacja, wulkanizacja, holowanie oraz wypożyczalnia aut i busów 9-osobowych. Tel. 781 504 876.">
+<meta name="theme-color" content="#232B3D">
+<link rel="preload" href="fonts/archivo-rdzen.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" href="img/hero-m-600.webp" imagesrcset="img/hero-m-600.webp 600w, img/hero-m-900.webp 900w, img/hero-m-1150.webp 1150w" imagesizes="100vw" media="(max-width:760px)">
+<link rel="preload" as="image" href="img/hero-1920.webp" imagesrcset="img/hero-1280.webp 1280w, img/hero-1920.webp 1920w, img/hero-2048.webp 2048w" imagesizes="(min-width:2048px) 2048px, 100vw" media="(min-width:761px)">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<style>
+@font-face{font-family:"Archivo";font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/archivo-rdzen.woff2) format("woff2");unicode-range:U+0020-007E,U+00A0,U+00A9,U+00AB,U+00B0,U+00B7,U+00BB,U+00D3,U+00D7,U+00F3,U+2013,U+2018-2019,U+201C-201E,U+2026}
+@font-face{font-family:"Archivo";font-style:normal;font-weight:400 800;font-display:swap;src:url(fonts/archivo-pl.woff2) format("woff2");unicode-range:U+0104-0107,U+0118-0119,U+0141-0144,U+015A-015B,U+0179-017C}
+:root{--granat:#232B3D;--granat2:#161C29;--czer:#D7262E;--czer2:#B81E25;--stal:#F1F3F6;--linia:#DCE0E7;--tekst:#262D3B;--szary:#5B6475;--hdr:74px;--kat:12deg}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:var(--hdr)}
+body{margin:0;font-family:Archivo,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:clamp(16px,.25vw + 15px,18px);line-height:1.6;color:var(--tekst);background:#fff;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{line-height:1.08;margin:0;color:var(--granat);font-weight:800;letter-spacing:-.015em}
+h2{font-size:clamp(30px,3vw,50px)}
+h3{font-size:clamp(20px,1.4vw,24px);font-weight:700}
+p{margin:0 0 1em}
+.wrap{width:min(1280px,100% - 40px);margin:0 auto}
+section{padding:clamp(64px,8vw,120px) 0}
+
+/* przyciski scięte jak pas szyldu */
+.btn{display:inline-flex;align-items:center;gap:10px;font:700 17px/1 Archivo,sans-serif;text-decoration:none;padding:18px 30px;border:0;cursor:pointer;clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%);transition:background .2s}
+.btn-c{background:var(--czer);color:#fff}.btn-c:hover{background:var(--czer2)}
+.btn-b{background:#fff;color:var(--granat)}.btn-b:hover{background:var(--stal)}
+.btn svg{width:20px;height:20px;flex:none}
+
+/* naglowek */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--hdr);background:rgba(22,28,41,.94);backdrop-filter:blur(8px);color:#fff}
+.hdr .wrap{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:#fff}
+.logo svg{height:40px;width:auto}
+.logo span{font-size:13px;line-height:1.25;color:#B9C0CE;border-left:1px solid rgba(255,255,255,.2);padding-left:14px}
+.menu{display:flex;gap:30px;align-items:center}
+.menu a{text-decoration:none;font-weight:600;font-size:16px;color:#E3E7EE;padding:6px 0;position:relative}
+.menu a::after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:3px;background:var(--czer);transform:scaleX(0) skewX(calc(var(--kat) * -1));transform-origin:left;transition:transform .2s}
+.menu a:hover::after,.menu a.akt::after{transform:scaleX(1) skewX(calc(var(--kat) * -1))}
+.hdr-tel{font-weight:700;text-decoration:none;display:flex;align-items:center;gap:8px;font-size:17px}
+.hdr-tel svg{width:18px;height:18px;color:var(--czer)}
+.burger{display:none;background:none;border:0;padding:10px;margin-right:-10px;cursor:pointer;color:#fff}
+.burger i{display:block;width:26px;height:3px;background:currentColor;margin:5px 0;transition:transform .2s,opacity .2s}
+.mpanel{display:none}
+
+/* pierwszy ekran */
+.hero{position:relative;min-height:min(100svh,1080px);display:flex;align-items:flex-end;background:var(--granat2);color:#fff;padding:0;overflow:hidden}
+.hero-foto{position:absolute;inset:0;max-width:2048px;margin:0 auto}
+.hero-foto img{width:100%;height:100%;object-fit:cover;object-position:50% 30%}
+.hero-foto::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(22,28,41,.92) 0%,rgba(22,28,41,.72) 38%,rgba(22,28,41,.15) 68%,rgba(22,28,41,0) 100%),linear-gradient(0deg,rgba(22,28,41,.55) 0%,rgba(22,28,41,0) 40%)}
+.hero-in{position:relative;z-index:2;width:min(1280px,100% - 40px);margin:0 auto;padding:calc(var(--hdr) + 60px) 0 150px}
+.hero h1{color:#fff;font-size:clamp(38px,4.6vw,76px);max-width:min(760px,100%)}
+.hero h1 em{font-style:normal;color:#fff;background:linear-gradient(transparent 62%,var(--czer) 62%,var(--czer) 92%,transparent 92%)}
+.hero p{font-size:clamp(17px,1.2vw,21px);max-width:560px;color:#DCE1EA;margin:22px 0 32px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+/* czerwony pas z szyldu */
+.pas{position:absolute;left:0;right:0;bottom:0;height:0;z-index:3;pointer-events:none}
+.pas-c{position:absolute;left:0;right:0;bottom:30px;height:46px;background:var(--czer);transform:skewY(-2deg);transform-origin:0 100%;display:flex;align-items:center;justify-content:flex-end;padding-right:max(20px,calc((100% - 1280px)/2))}
+.pas-c span{color:#fff;font-weight:800;font-style:italic;font-size:clamp(15px,1.1vw,19px);letter-spacing:.02em}
+.pas-b{position:absolute;left:0;right:0;bottom:-300px;height:330px;background:#fff;transform:skewY(-2deg);transform-origin:0 0}
+
+/* usługi */
+.glowa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:56px}
+.glowa p{color:var(--szary);margin:0;max-width:560px}
+.uslugi{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:2px solid var(--granat)}
+.usl{padding:30px 28px 34px 0;border-bottom:1px solid var(--linia)}
+.usl:not(:nth-child(4n+1)){padding-left:28px;border-left:1px solid var(--linia)}
+.nr{display:inline-block;font-weight:800;font-size:15px;color:#fff;background:var(--czer);padding:5px 14px 5px 12px;clip-path:polygon(6px 0,100% 0,calc(100% - 6px) 100%,0 100%);margin-bottom:18px}
+.usl h3{margin-bottom:10px}
+.usl p{color:var(--szary);font-size:16px;margin:0}
+.usl.wyr{background:var(--granat);color:#DCE1EA;padding:30px 28px 34px}
+.usl.wyr h3{color:#fff}.usl.wyr p{color:#C3CAD7}
+.usl.wyr a{color:#fff;font-weight:700}
+
+/* wypożyczalnia */
+.wyp{background:var(--stal)}
+.tor{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 72px)/4);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px;scrollbar-width:thin;cursor:grab}
+.tor.ciag{cursor:grabbing;scroll-snap-type:none}
+.auto{scroll-snap-align:start;background:#fff;display:flex;flex-direction:column}
+.auto figure{margin:0;position:relative;aspect-ratio:4/3;overflow:hidden;background:#dfe3ea}
+.auto img{width:100%;height:100%;object-fit:cover;pointer-events:none}
+.cena{position:absolute;left:0;bottom:16px;background:var(--czer);color:#fff;font-weight:800;font-size:18px;padding:7px 18px 7px 14px;clip-path:polygon(0 0,100% 0,calc(100% - 10px) 100%,0 100%)}
+.cena small{font-weight:600;font-size:13px;opacity:.9}
+.auto-in{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.auto h3{font-size:21px}
+.auto ul{list-style:none;margin:0;padding:0;color:var(--szary);font-size:15.5px}
+.auto li{padding:3px 0}
+.auto .kaucja{margin-top:auto;padding-top:12px;border-top:1px solid var(--linia);font-size:15px;color:var(--szary)}
+.nawi{display:flex;gap:10px}
+.nawi button{width:52px;height:52px;border:2px solid var(--granat);background:#fff;color:var(--granat);cursor:pointer;display:grid;place-items:center;clip-path:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%)}
+.nawi button:hover{background:var(--granat);color:#fff}
+.nawi svg{width:22px;height:22px}
+
+/* cennik */
+.tab-wrap{overflow-x:auto;border-top:2px solid var(--granat)}
+table{width:100%;border-collapse:collapse;min-width:720px;font-size:16px}
+th,td{text-align:left;padding:15px 14px;border-bottom:1px solid var(--linia);vertical-align:top}
+th{font-size:14px;color:var(--szary);font-weight:700}
+td:first-child{font-weight:700;color:var(--granat)}
+td:first-child small{display:block;font-weight:400;color:var(--szary);font-size:14px}
+td.num,th.num{text-align:right;white-space:nowrap}
+tr:hover td{background:var(--stal)}
+.uwaga{color:var(--szary);font-size:15px;margin-top:18px}
+
+/* wnetrza */
+.galeria{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - 48px)/3);gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:56px;padding-bottom:14px;cursor:grab}
+.galeria button{scroll-snap-align:start;border:0;padding:0;background:none;cursor:zoom-in;aspect-ratio:4/3;overflow:hidden}
+.galeria img{width:100%;height:100%;object-fit:cover;transition:transform .4s;pointer-events:none}
+.galeria button:hover img{transform:scale(1.03)}
+
+/* czesci - ciemna sekcja */
+.czesci{background:var(--granat);color:#DCE1EA;position:relative;overflow:hidden}
+.czesci::before{content:"";position:absolute;right:-10%;top:0;bottom:0;width:50%;background:var(--czer);transform:skewX(calc(var(--kat) * -1));transform-origin:top}
+.czesci .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:64px;align-items:center}
+.czesci h2{color:#fff;margin-bottom:20px}
+.czesci p{font-size:clamp(17px,1.1vw,20px);max-width:600px}
+.hurt{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.hurt span{border:1px solid rgba(255,255,255,.3);padding:9px 16px;font-weight:700;color:#fff;font-size:15px}
+.czesci .haslo{color:#fff;font-weight:800;font-style:italic;font-size:clamp(34px,4vw,64px);line-height:1.05;margin:0;justify-self:end;text-align:right;max-width:none}
+.haslo span{display:block}
+
+/* kontakt */
+.kontakt{background:var(--stal)}
+.kontakt .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:56px}
+.dane{display:grid;gap:22px;margin:32px 0}
+.dane div{border-left:4px solid var(--czer);padding-left:18px}
+.dane b{display:block;font-size:14px;color:var(--szary);font-weight:600}
+.dane a,.dane span{font-size:22px;font-weight:800;color:var(--granat);text-decoration:none}
+.mapa{aspect-ratio:16/10;background:#dfe3ea;position:relative;margin-top:8px}
+.mapa iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.mapa button{position:absolute;inset:0;border:0;background:var(--granat);color:#fff;font:700 17px Archivo,sans-serif;cursor:pointer}
+form{background:#fff;padding:clamp(24px,3vw,44px);display:grid;gap:16px;align-content:start}
+form h3{font-size:clamp(24px,2vw,32px);margin-bottom:6px}
+label{display:grid;gap:6px;font-weight:600;font-size:15px;color:var(--granat)}
+input,select,textarea{font:inherit;font-size:16px;padding:14px 16px;border:1px solid #C9CFDA;background:#fff;color:var(--tekst);width:100%;border-radius:0}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--granat);outline-offset:0;border-color:var(--granat)}
+textarea{min-height:120px;resize:vertical}
+.dwa{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}
+form .btn{justify-self:start;margin-top:6px}
+.info{font-size:14px;color:var(--szary);margin:0}
+
+/* stopka */
+.stopka{background:var(--granat2);color:#AEB6C5;padding:0;font-size:15.5px;position:relative}
+.stopka::before{content:"";display:block;height:8px;background:var(--czer)}
+.stopka-in{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding:56px 0 40px}
+.stopka h4{color:#fff;margin:0 0 14px;font-size:16px}
+.stopka p{margin:0 0 8px}
+.stopka a{text-decoration:none}.stopka a:hover{color:#fff}
+.stopka-dol{border-top:1px solid rgba(255,255,255,.12);padding:20px 0 26px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center;font-size:14.5px}
+.wylinka-badge{display:inline-flex;align-items:center;gap:.4em;color:inherit;text-decoration:none;font-size:.875em;line-height:1;opacity:.85}
+.wylinka-badge:hover,.wylinka-badge:focus-visible{opacity:1}
+.wylinka-badge:focus-visible{outline:2px solid currentColor;outline-offset:3px;border-radius:2px}
+.wylinka-badge svg{width:18px;height:18px;flex:none;overflow:visible}
+.wylinka-badge b{font-weight:600}
+.wylinka-badge .wy-old{opacity:.45;transform-origin:40px 30px;transition:transform .32s cubic-bezier(.3,.7,.4,1),opacity .32s ease-out}
+.wylinka-badge .wy-pod{opacity:0;transition:opacity .2s ease-out .08s}
+.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:translate(9px,7px) rotate(9deg);opacity:0}
+.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:1}
+@media (prefers-reduced-motion:reduce){.wylinka-badge .wy-old,.wylinka-badge .wy-pod{transition:none}.wylinka-badge:hover .wy-old,.wylinka-badge:focus-visible .wy-old{transform:none;opacity:.45}.wylinka-badge:hover .wy-pod,.wylinka-badge:focus-visible .wy-pod{opacity:0}}
+
+.mob{display:none}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(10,13,20,.94);display:none;align-items:center;justify-content:center;padding:20px}
+.lb.on{display:flex}
+.lb img{max-width:min(1400px,100%);max-height:84vh;object-fit:contain}
+.lb button{position:absolute;background:none;border:0;color:#fff;cursor:pointer;padding:12px}
+.lb svg{width:32px;height:32px}
+.lb .x{top:14px;right:14px}.lb .lw{left:10px;top:50%;transform:translateY(-50%)}.lb .pw{right:10px;top:50%;transform:translateY(-50%)}
+
+@media (max-width:1100px){
+  .menu{gap:20px}.logo span{display:none}
+  .uslugi{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .usl:nth-child(n){padding:28px 24px 30px 0;border-left:0}
+  .usl:nth-child(2n){padding-left:24px;border-left:1px solid var(--linia)}
+  .usl.wyr{padding:28px 24px 30px}
+  .tor{grid-auto-columns:calc((100% - 48px)/3)}
+}
+@media (max-width:900px){
+  .czesci .haslo{justify-self:start;text-align:left}
+  :root{--hdr:64px}
+  .logo svg{height:34px}
+  .menu,.hdr-tel{display:none}
+  .burger{display:block}
+  .mpanel{position:fixed;top:var(--hdr);left:0;right:0;bottom:0;background:#fff;z-index:49;padding:12px 20px 32px;flex-direction:column;overflow:auto}
+  .mpanel.on{display:flex}
+  .mpanel a{text-decoration:none;font-size:22px;font-weight:700;color:var(--granat);padding:15px 0;border-bottom:1px solid var(--linia)}
+  .mpanel .btn{margin-top:24px;justify-content:center;border:0;color:#fff}
+  .mpanel .mt{margin-top:16px;color:var(--szary);font-size:16px;font-weight:500;border:0;padding:0}
+  body.menu-on .burger i:nth-child(1){transform:translateY(8px) rotate(45deg)}
+  body.menu-on .burger i:nth-child(2){opacity:0}
+  body.menu-on .burger i:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+  .glowa{grid-template-columns:minmax(0,1fr);gap:16px;margin-bottom:36px}
+  .czesci .wrap,.kontakt .wrap{grid-template-columns:minmax(0,1fr);gap:40px}
+  .czesci::before{width:100%;right:auto;left:0;top:auto;height:12px;bottom:0;transform:none}
+  .tor{grid-auto-columns:calc((100% - 24px)/2)}
+  .galeria{grid-auto-columns:calc((100% - 24px)/2)}
+  .stopka-in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .stopka-in>div:first-child{grid-column:1/-1}
+}
+@media (max-width:760px){
+  .hero{min-height:calc(100svh - 0px);align-items:stretch}
+  .hero-foto img{object-position:50% 0%}
+  .hero-foto::after{background:linear-gradient(0deg,rgba(22,28,41,.97) 0%,rgba(22,28,41,.9) 40%,rgba(22,28,41,.35) 64%,rgba(22,28,41,.1) 100%)}
+  .hero-in{display:flex;flex-direction:column;justify-content:flex-end;padding:calc(var(--hdr) + 24px) 0 96px}
+  .hero h1{font-size:clamp(31px,8.6vw,40px)}
+  .hero p{font-size:16.5px;margin:14px 0 24px;line-height:1.5}
+  .hero-cta .btn{flex:1 1 100%;justify-content:center;padding:16px 22px}
+  .pas-c{bottom:18px;height:34px;transform:skewY(-4deg)}
+  .pas-c span{font-size:14px}
+  .pas-b{bottom:-300px;height:318px;transform:skewY(-4deg)}
+  .uslugi{grid-template-columns:minmax(0,1fr)}
+  .usl:nth-child(n){padding:24px 0 26px;border-left:0}
+  .usl.wyr{padding:24px 20px 26px;margin:0 -20px}
+  .tor{grid-auto-columns:84%;gap:16px}
+  .galeria{grid-auto-columns:84%;gap:16px;margin-top:40px}
+  .nawi{display:none}
+  .dwa{grid-template-columns:minmax(0,1fr)}
+  .tab-wrap{overflow:visible}
+  table{min-width:0}
+  thead{display:none}
+  table,tbody,tr,td{display:block}
+  tr{padding:16px 0;border-bottom:1px solid var(--linia);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 12px}
+  tr:hover td{background:none}
+  td{border:0;padding:0}
+  td:first-child{grid-column:1/-1;font-size:17px}
+  td.num{text-align:left;white-space:normal;font-size:15.5px;font-weight:600}
+  td.num::before{content:attr(data-l);display:block;font-size:12.5px;color:var(--szary);font-weight:500}
+  .dane a,.dane span{font-size:20px}
+  form .btn{justify-self:stretch;justify-content:center}
+  .mob{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:40;transform:translateY(100%);transition:transform .25s}
+  .mob.widac{transform:none}
+  .mob a{display:flex;align-items:center;justify-content:center;gap:8px;padding:16px 10px;font-weight:700;text-decoration:none;color:#fff;background:var(--granat2)}
+  .mob a:first-child{background:var(--czer)}
+  .mob svg{width:18px;height:18px}
+  .stopka-dol{padding-bottom:84px}
+}
+@media (max-width:760px) and (max-height:700px){
+  .hero h1{font-size:clamp(28px,8vw,34px)}
+  .hero p{font-size:15.5px;margin:10px 0 24px}
+  .hero-in{padding-bottom:84px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="CAR SERWIS Szymon Liszewski - strona główna">
+      <svg viewBox="0 0 236 52" role="img" aria-hidden="true"><path d="M10 40 L232 30 L228 50 L6 52 Z" fill="#D7262E"/><text x="4" y="31" font-family="Archivo,Arial,sans-serif" font-weight="800" font-size="32" font-style="italic" fill="#fff" letter-spacing="1" transform="skewX(-8)">CAR SERWIS</text></svg>
+      <span>Szymon Liszewski<br>Suwałki</span>
+    </a>
+    <nav class="menu" aria-label="Menu główne">
+      <a href="#uslugi">Serwis</a>
+      <a href="#wypozyczalnia">Wypożyczalnia</a>
+      <a href="#cennik">Cennik wynajmu</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a class="hdr-tel" href="tel:+48781504876"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>781 504 876</a>
+    <button class="burger" type="button" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+  <nav class="mpanel" aria-label="Menu mobilne">
+    <a href="#uslugi">Serwis</a>
+    <a href="#wypozyczalnia">Wypożyczalnia</a>
+    <a href="#cennik">Cennik wynajmu</a>
+    <a href="#kontakt">Kontakt</a>
+    <a class="btn btn-c" href="tel:+48781504876">Zadzwoń: 781 504 876</a>
+    <a class="mt" href="tel:+48512983477">Wypożyczalnia: 512 983 477</a>
+  </nav>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-foto">
+    <picture>
+      <source media="(max-width:760px)" srcset="img/hero-m-600.webp 600w, img/hero-m-900.webp 900w, img/hero-m-1150.webp 1150w" sizes="100vw">
+      <img src="img/hero-1920.webp" srcset="img/hero-1280.webp 1280w, img/hero-1920.webp 1920w, img/hero-2048.webp 2048w" sizes="(min-width:2048px) 2048px, 100vw" width="2048" height="1536" alt="Warsztat CAR SERWIS przy Bakałarzewskiej 84A w Suwałkach z samochodami z wypożyczalni przed wejściem" fetchpriority="high">
+    </picture>
+  </div>
+  <div class="hero-in">
+    <h1>Mechanik i wypożyczalnia samochodów w <em>Suwałkach</em></h1>
+    <p>Naprawy główne i bieżące, od wymiany oleju po naprawy silnika. Pod tym samym szyldem przy Bakałarzewskiej 84A wynajmiesz auto osobowe albo 9-osobowego busa.</p>
+    <div class="hero-cta" id="hero-cta">
+      <a class="btn btn-c" href="tel:+48781504876"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Umów naprawę: 781 504 876</a>
+      <a class="btn btn-b" href="#wypozyczalnia">Auta do wynajęcia</a>
+    </div>
+  </div>
+  <div class="pas" aria-hidden="true"><div class="pas-c"><span>Szybko, tanio, profesjonalnie</span></div><div class="pas-b"></div></div>
+</section>
+
+<section id="uslugi">
+  <div class="wrap">
+    <div class="glowa">
+      <h2>Serwis samochodów osobowych w Suwałkach i okolicy</h2>
+      <p>Pracujemy na częściach oryginalnych i doradzamy, jak naprawić auto rozsądnie. Jeśli samochód nie odpali albo stanie w trasie, przyjedziemy z mechaniką mobilną lub lawetą.</p>
+    </div>
+    <div class="uslugi">
+      <div class="usl"><span class="nr">01</span><h3>Naprawy główne i bieżące</h3><p>Od wymiany olejów po naprawy silnika, z doradztwem w doborze najlepszego rozwiązania.</p></div>
+      <div class="usl"><span class="nr">02</span><h3>Diagnostyka komputerowa</h3><p>Odczyt błędów i sprawdzenie układów, zanim zaczniemy wymieniać części.</p></div>
+      <div class="usl"><span class="nr">03</span><h3>Serwis klimatyzacji</h3><p>Serwis i przygotowanie klimatyzacji, żeby w aucie znów było czym oddychać latem.</p></div>
+      <div class="usl"><span class="nr">04</span><h3>Kontrola przed zakupem</h3><p>Sprawdzimy używane auto, zanim za nie zapłacisz, i powiemy, co wymaga naprawy.</p></div>
+      <div class="usl"><span class="nr">05</span><h3>Wulkanizacja i wymiana opon</h3><p>Sezonowa wymiana opon i wulkanizacja na miejscu.</p></div>
+      <div class="usl"><span class="nr">06</span><h3>Holowanie i mechanika mobilna</h3><p>Pomoc na drodze i transport auta do warsztatu.</p></div>
+      <div class="usl"><span class="nr">07</span><h3>Awaryjne otwieranie pojazdów</h3><p>Kluczyki zostały w środku albo zamek nie reaguje? Zadzwoń, pomożemy.</p></div>
+      <div class="usl wyr"><span class="nr">08</span><h3>Wypożyczalnia samochodów</h3><p>Auta osobowe, SUV-y i busy 8-9 osobowe na doby, tygodnie i miesiące. <a href="#wypozyczalnia">Zobacz auta</a></p></div>
+    </div>
+  </div>
+</section>
+
+<section class="wyp" id="wypozyczalnia">
+  <div class="wrap">
+    <div class="glowa">
+      <div>
+        <h2>Wypożyczalnia samochodów Suwałki</h2>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:end;gap:24px">
+        <p>Auta są regularnie serwisowane w naszym warsztacie. Wynajem na wyjazd służbowy, urlop z rodziną albo na czas, gdy Twój samochód jest w naprawie.</p>
+        <div class="nawi"><button type="button" data-kier="-1" aria-label="Poprzednie auta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 5l-7 7 7 7"/></svg></button><button type="button" data-kier="1" aria-label="Następne auta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 5l7 7-7 7"/></svg></button></div>
+      </div>
+    </div>
+    <div class="tor" id="tor">
+      <article class="auto"><figure><img src="img/mg3-hybryda-480.webp" srcset="img/mg3-hybryda-480.webp 480w, img/mg3-hybryda-800.webp 800w" sizes="(max-width:760px) 84vw, (max-width:1100px) 33vw, 300px" width="480" height="360" loading="lazy" alt="MG 3 Hybryda, 2025 z wypożyczalni CAR SERWIS Suwałki"><span class="cena">od 150 zł <small>/ doba</small></span></figure><div class="auto-in"><h3>MG 3 Hybryda, 2025</h3><ul><li>195 KM, napęd hybrydowy</li><li>Auto miejskie, 5 drzwi</li></ul><p class="kaucja">Kaucja 1 000 zł</p></div></article>
+      <article class="auto"><figure><img src="img/mg3-benzyna-480.webp" srcset="img/mg3-benzyna-480.webp 480w, img/mg3-benzyna-800.webp 800w" sizes="(max-width:760px) 84vw, (max-width:1100px) 33vw, 300px" width="480" height="360" loading="lazy" alt="MG 3 1.5 benzyna, 2024 z wypożyczalni CAR SERWIS Suwałki"><span class="cena">od 130 zł <small>/ doba</small></span></figure><div class="auto-in"><h3>MG 3 1.5 benzyna, 2024</h3><ul><li>115 KM</li><li>Auto miejskie, 5 drzwi</li></ul><p class="kaucja">Kaucja 1 000 zł</p></div></article>
+      <article class="auto"><figure><img src="img/i30-kombi-automat-480.webp" srcset="img/i30-kombi-automat-480.webp 480w, img/i30-kombi-automat-800.webp 800w" sizes="(max-width:760px) 84vw, (max-width:1100px) 33vw, 300px" width="480" height="360" loading="lazy" alt="Hyundai i30 kombi, 2023 z wypożyczalni CAR SERWIS Suwałki"><span class="cena">od 200 zł <small>/ doba</small></span></figure><div class="auto-in"><h3>Hyundai i30 kombi, 2023</h3><ul><li>1.5, 160 KM, automat</li><li>Hybryda, w trasie ok. 4,2 l/100 km</li></ul><p class="kaucja">Kaucja 1 500 zł</p></div></article>
+      <article class="auto"><figure><img src="img/i30-hatchback-480.webp" srcset="img/i30-hatchback-480.webp 480w, img/i30-hatchback-800.webp 800w" sizes="(max-width:760px) 84vw, (max-width:1100px) 33vw, 300px" width="480" height="360" loading="lazy" alt="Hyundai i30 Komfort hatchback z wypożyczalni CAR SERWIS Suwałki"><span class="cena">od 180 zł <small>/ doba</small></span></figure><div class="auto-in"><h3>Hyundai i30 Komfort hatchback</h3><ul><li>Kamery, czujniki parkowania</li><li>Nawigacja</li></ul><p class="kaucja">Kaucja 1 500 zł</p></div></article>
+      <article class="auto"><figure><img src="img/i30-classic-kombi-480.webp" srcset="img/i30-classic-kombi-480.webp 480w, img/i30-classic-kombi-800.webp 800w" sizes="(max-width:760px) 84vw, (max-width:1100px) 33vw, 300px" width="480" height="360" loading="lazy" alt="Hyundai i30 Classic+ kombi z wypożyczalni CAR SERWIS Suwałki"><span class="cena">od 160 zł <small>/ doba</small></span></figure><div class="auto-in"><h3>Hyundai i30 Classic+ kombi</h3><ul><li>Skrzynia manualna</li><li>Nadwozie kombi</li></ul><p class="kaucja">Kaucja 1 000 zł</p></div></article>
+      <article class="auto"><figure><img src="img/qashqai-480.webp" srcset="img/qashqai-480.webp 480w" sizes="(max-width:760px) 84vw, (max-width:1100px) 33vw, 300px" width="480" height="360" loading="lazy" alt="Nissan Qashqai, 2023 z wypożyczalni CAR SERWIS Suwałki"><span class="cena">od 280 zł <small>/ doba</small></span></figure><div class="auto-in"><h3>Nissan Qashqai, 2023</h3><ul><li>1.3, 160 KM, automat</li><li>Kamery 360°, czujniki przód i tył</li></ul><p class="kaucja">Kaucja 2 000 zł</p></div></article>
+      <article class="auto"><figure><img src="img/cupra-480.webp" srcset="img/cupra-480.webp 480w, img/cupra-800.webp 800w" sizes="(max-width:760px) 84vw, (max-width:1100px) 33vw, 300px" width="480" height="360" loading="lazy" alt="Cupra Formentor 4x4 z wypożyczalni CAR SERWIS Suwałki"><span class="cena">od 300 zł <small>/ doba</small></span></figure><div class="auto-in"><h3>Cupra Formentor 4x4</h3><ul><li>Skrzynia automatyczna</li><li>Napęd na cztery koła</li></ul><p class="kaucja">Kaucja 2 000 zł</p></div></article>
+      <article class="auto"><figure><img src="img/proace-9-480.webp" srcset="img/proace-9-480.webp 480w, img/proace-9-800.webp 800w" sizes="(max-width:760px) 84vw, (max-width:1100px) 33vw, 300px" width="480" height="360" loading="lazy" alt="Toyota Proace Verso Long z wypożyczalni CAR SERWIS Suwałki"><span class="cena">od 380 zł <small>/ doba</small></span></figure><div class="auto-in"><h3>Toyota Proace Verso Long</h3><ul><li>9 osób, 2.0 D 177 KM, automat</li><li>Klimatyzacja 3-strefowa, drzwi suwane z obu stron</li></ul><p class="kaucja">Kaucja 2 500 zł</p></div></article>
+      <article class="auto"><figure><img src="img/proace-8-480.webp" srcset="img/proace-8-480.webp 480w, img/proace-8-800.webp 800w" sizes="(max-width:760px) 84vw, (max-width:1100px) 33vw, 300px" width="480" height="360" loading="lazy" alt="Toyota Proace Verso, 2021 z wypożyczalni CAR SERWIS Suwałki"><span class="cena">od 350 zł <small>/ doba</small></span></figure><div class="auto-in"><h3>Toyota Proace Verso, 2021</h3><ul><li>8 osób, skrzynia automatyczna</li><li>Nowość w ofercie</li></ul><p class="kaucja">Kaucja 1 500 zł</p></div></article>
+    </div>
+    <div class="galeria" id="galeria">
+      <button type="button" data-duze="img/wn-mg3-800.webp"><img src="img/wn-mg3-480.webp" srcset="img/wn-mg3-480.webp 480w, img/wn-mg3-800.webp 800w" sizes="(max-width:760px) 84vw, 400px" width="480" height="360" loading="lazy" alt="Wnętrze MG 3"></button>
+      <button type="button" data-duze="img/wn-i30-800.webp"><img src="img/wn-i30-480.webp" srcset="img/wn-i30-480.webp 480w, img/wn-i30-800.webp 800w" sizes="(max-width:760px) 84vw, 400px" width="480" height="360" loading="lazy" alt="Wnętrze Hyundaia i30 z automatem"></button>
+      <button type="button" data-duze="img/wn-proace-800.webp"><img src="img/wn-proace-480.webp" srcset="img/wn-proace-480.webp 480w, img/wn-proace-800.webp 800w" sizes="(max-width:760px) 84vw, 400px" width="480" height="360" loading="lazy" alt="Kabina Toyoty Proace Verso"></button>
+      <button type="button" data-duze="img/bagaz-proace-800.webp"><img src="img/bagaz-proace-480.webp" srcset="img/bagaz-proace-480.webp 480w, img/bagaz-proace-800.webp 800w" sizes="(max-width:760px) 84vw, 400px" width="480" height="360" loading="lazy" alt="Bagażnik Toyoty Proace Verso"></button>
+      <button type="button" data-duze="img/wn-proace8-800.webp"><img src="img/wn-proace8-480.webp" srcset="img/wn-proace8-480.webp 480w, img/wn-proace8-800.webp 800w" sizes="(max-width:760px) 84vw, 400px" width="480" height="360" loading="lazy" alt="Fotele w Toyocie Proace Verso"></button>
+    </div>
+  </div>
+</section>
+
+<section id="cennik">
+  <div class="wrap">
+    <div class="glowa">
+      <h2>Cennik wynajmu</h2>
+      <p>Ceny za dobę zależą od długości wynajmu. Dłuższy wynajem busa ustalamy indywidualnie: zadzwoń pod 512 983 477.</p>
+    </div>
+    <div class="tab-wrap">
+      <table>
+        <thead><tr><th>Samochód</th><th class="num">1-2 dni</th><th class="num">3-5 dni</th><th class="num">7-14 dni</th><th class="num">Miesiąc</th><th class="num">Kaucja</th></tr></thead>
+        <tbody>
+          <tr><td>MG 3 Hybryda<small>2025, 195 KM</small></td><td class="num" data-l="1-2 dni">150 zł</td><td class="num" data-l="3-5 dni">130 zł</td><td class="num" data-l="7-14 dni">110 zł</td><td class="num" data-l="Miesiąc">2 400 zł</td><td class="num" data-l="Kaucja">1 000 zł</td></tr>
+          <tr><td>MG 3 1.5 benzyna<small>2024, 115 KM</small></td><td class="num" data-l="1-2 dni">130 zł</td><td class="num" data-l="3-5 dni">120 zł</td><td class="num" data-l="7-14 dni">100 zł</td><td class="num" data-l="Miesiąc">1 950 zł</td><td class="num" data-l="Kaucja">1 000 zł</td></tr>
+          <tr><td>Hyundai i30 Classic+ / kombi</td><td class="num" data-l="1-2 dni">160 zł</td><td class="num" data-l="3-5 dni">150 zł</td><td class="num" data-l="7-14 dni">130 zł</td><td class="num" data-l="Miesiąc">110 zł / doba</td><td class="num" data-l="Kaucja">1 000 zł</td></tr>
+          <tr><td>Hyundai i30 Komfort kombi</td><td class="num" data-l="1-2 dni">170 zł</td><td class="num" data-l="3-5 dni">160 zł</td><td class="num" data-l="7-14 dni">150 zł</td><td class="num" data-l="Miesiąc">123 zł / doba</td><td class="num" data-l="Kaucja">1 000 zł</td></tr>
+          <tr><td>Hyundai i30 Komfort hatchback</td><td class="num" data-l="1-2 dni">180 zł</td><td class="num" data-l="3-5 dni">170 zł</td><td class="num" data-l="7-14 dni">140 zł</td><td class="num" data-l="Miesiąc">110 zł / doba</td><td class="num" data-l="Kaucja">1 500 zł</td></tr>
+          <tr><td>Hyundai i30 kombi 1.5 160 KM<small>2023</small></td><td class="num" data-l="1-2 dni">200 zł</td><td class="num" data-l="3-5 dni">180 zł</td><td class="num" data-l="7-14 dni">160 zł</td><td class="num" data-l="Miesiąc">120 zł / doba</td><td class="num" data-l="Kaucja">1 500 zł</td></tr>
+          <tr><td>Hyundai i30 kombi 1.5 160 KM, automat<small>2023</small></td><td class="num" data-l="1-2 dni">200 zł</td><td class="num" data-l="3-5 dni">180 zł</td><td class="num" data-l="7-14 dni">160 zł</td><td class="num" data-l="Miesiąc">120 zł / doba</td><td class="num" data-l="Kaucja">1 500 zł</td></tr>
+          <tr><td>Nissan Qashqai Biznes Plus</td><td class="num" data-l="1-2 dni">250 zł</td><td class="num" data-l="3-5 dni">230 zł</td><td class="num" data-l="7-14 dni">200 zł</td><td class="num" data-l="Miesiąc">150 zł / doba</td><td class="num" data-l="Kaucja">2 000 zł</td></tr>
+          <tr><td>Nissan Qashqai, automat<small>2023</small></td><td class="num" data-l="1-2 dni">280 zł</td><td class="num" data-l="3-5 dni">250 zł</td><td class="num" data-l="7-14 dni">220 zł</td><td class="num" data-l="Miesiąc">170 zł / doba</td><td class="num" data-l="Kaucja">2 000 zł</td></tr>
+          <tr><td>Cupra Formentor 4x4, automat</td><td class="num" data-l="1-2 dni">300 zł</td><td class="num" data-l="3-5 dni">280 zł</td><td class="num" data-l="7-14 dni">260 zł</td><td class="num" data-l="Miesiąc">200 zł / doba</td><td class="num" data-l="Kaucja">2 000 zł</td></tr>
+          <tr><td>Toyota Proace Verso Long, 9 osób</td><td class="num" data-l="1-2 dni">380 zł</td><td class="num" data-l="3-5 dni">350 zł</td><td class="num" data-l="7-14 dni">do ustalenia</td><td class="num" data-l="Miesiąc">do ustalenia</td><td class="num" data-l="Kaucja">2 500 zł</td></tr>
+          <tr><td>Toyota Proace Verso, 8 osób, automat<small>2021</small></td><td class="num" data-l="1-2 dni">350 zł</td><td class="num" data-l="3-5 dni">do ustalenia</td><td class="num" data-l="7-14 dni">do ustalenia</td><td class="num" data-l="Miesiąc">do ustalenia</td><td class="num" data-l="Kaucja">1 500 zł</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="uwaga">Ceny za dobę wynajmu. W kolumnie "Miesiąc" kwota za cały miesiąc albo stawka za dobę przy wynajmie miesięcznym.</p>
+  </div>
+</section>
+
+<section class="czesci">
+  <div class="wrap">
+    <div>
+      <h2>Części oryginalne i sprawdzeni dostawcy</h2>
+      <p>Współpracujemy z serwisami ASO i hurtowniami motoryzacyjnymi, dzięki czemu części mamy szybko, a naprawa nie stoi w miejscu.</p>
+      <div class="hurt"><span>Inter Cars</span><span>Gordon</span><span>Inter Team</span><span>Auto Land</span><span>Polamel</span></div>
+    </div>
+    <p class="haslo"><span>Szybko.</span><span>Tanio.</span><span>Profesjonalnie.</span></p>
+  </div>
+</section>
+
+<section class="kontakt" id="kontakt">
+  <div class="wrap">
+    <div>
+      <h2>Przyjedź albo zadzwoń</h2>
+      <div class="dane">
+        <div><b>Serwis i naprawy</b><a href="tel:+48781504876">781 504 876</a></div>
+        <div><b>Wypożyczalnia</b><a href="tel:+48512983477">512 983 477</a></div>
+        <div><b>E-mail</b><a href="mailto:simon@onet.pl">simon@onet.pl</a></div>
+        <div><b>Adres</b><span>Bakałarzewska 84A, 16-400 Suwałki</span></div>
+      </div>
+      <div class="mapa" id="mapa"></div>
+    </div>
+    <form onsubmit="event.preventDefault();this.querySelector('.info').textContent='To podgląd strony, formularz zacznie wysyłać wiadomości po wdrożeniu.'">
+      <h3>Zapytaj o naprawę lub wynajem</h3>
+      <div class="dwa">
+        <label>Imię<input name="imie" autocomplete="name"></label>
+        <label>Telefon<input name="tel" type="tel" autocomplete="tel"></label>
+      </div>
+      <label>W czym pomóc?<select name="temat"><option>Naprawa / serwis</option><option>Diagnostyka</option><option>Klimatyzacja</option><option>Opony</option><option>Wynajem samochodu</option><option>Wynajem busa</option></select></label>
+      <label>Samochód i opis<textarea name="opis" placeholder="Marka, model, rocznik i co się dzieje z autem albo termin wynajmu"></textarea></label>
+      <button class="btn btn-c" type="submit">Wyślij zapytanie</button>
+      <p class="info">Oddzwonimy albo odpiszemy z wyceną.</p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="stopka">
+  <div class="wrap">
+    <div class="stopka-in">
+      <div>
+        <h4>CAR SERWIS Szymon Liszewski</h4>
+        <p>Serwis samochodów osobowych i wypożyczalnia samochodów w Suwałkach.</p>
+        <p>Bakałarzewska 84A, 16-400 Suwałki</p>
+      </div>
+      <div><h4>Strona</h4><p><a href="#uslugi">Serwis</a></p><p><a href="#wypozyczalnia">Wypożyczalnia</a></p><p><a href="#cennik">Cennik wynajmu</a></p><p><a href="#kontakt">Kontakt</a></p></div>
+      <div><h4>Kontakt</h4><p><a href="tel:+48781504876">781 504 876</a></p><p><a href="tel:+48512983477">512 983 477</a></p><p><a href="mailto:simon@onet.pl">simon@onet.pl</a></p></div>
+    </div>
+    <div class="stopka-dol">
+      <span>© 2026 CAR SERWIS Szymon Liszewski</span>
+      <a class="wylinka-badge" href="https://wylinka.pl/?utm_source=car-serwis.com.pl&amp;utm_medium=stopka&amp;utm_campaign=wykonanie" rel="noopener" title="Strona wykonana przez Wylinka"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" fill="currentColor"><path d="M9.8 22.8l-1.2-7.9 2.2-3.7 15.5 4.6-.5 1.5-7.2 5.5 4.7 15.6 5-15.6 7 0 4.1 12.7-4.2-.9-2.6 1.8-.8-2.2-5.3 15.6-4.3 0 .4 .2-2.1 2.8-1.3-1.1 1.1-1.4-3.1 .2-.1-1.7 2.2-.1-5.7-16.5-4.8 .6-.8 3.1 0 .5-.3 .5 .8 2.2-1.6 .5-.4-1.3-.8 1.6-1.5-.8 .8-1.6-1.4 .6-.6-1.6 2.3-.8 .2-.4 1.3-4.8 5.9-.8-2.4-6.9zM15.2 13.7l-.1-.4-.4 .8-.1 .8 .1 1 .1 .4 .3 .7 .3-.9 .1-.7 0-.8z"/><path class="wy-pod" d="M37.1 49.8l-4.5-13.3 2.6-1.8 4.2 .9 .9 2.8 3-9.7 0-.5 .1-.8 3.2-8.4 .5-1 .6-1 .9-1.1 1.3-1 1.1-.7 1.4-.5 1.4-.3 .7 0 .9 0 1.2 .3 1.4 .6 .8 .5 .7 .7 .6 .7 .5 .9 .3 .9 .1 .9 0 .8-.2 .9-.5 .9-.5 .6-.7 .5-.7 .3-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.6-.1-.6-.3-.7-.4-.5-.4-.4-.5-.3-.6-.3-.7 0-.7 .1-.6 .1-.5 .4-.5 .5-.3 .5-.2 .7-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1-2.1-2.8 .4-.2z"/><path class="wy-old" d="M40.8 50l.4-.2-4.1 0-4.2-12.5 2.5-1.7 4.3 .9 .6 1.9 .6-1.6 0-.3 2.4-7.8 0-.5 .1-.8 3.2-8.4 .4-.8 .6-.9 .9-1.2 .9-.9 1.3-.8 1.4-.6 1.2-.3 1.4-.1 1.3 .1 .6 .2 .8 .3 1.1 .6 .9 .7 .7 .9 .5 .9 .3 .9 .1 1.1-.1 .9-.3 .9-.4 .7-.6 .7-.6 .4-.6 .2-.1-.1 0-.1 .5-.5 .3-.7 .2-.5 0-.5-.1-.6-.2-.6-.3-.5-.4-.5-.5-.3-.6-.3-.7-.1-.6 0-.6 .1-.6 .3-.6 .5-.3 .4-.2 .5-.1 .5-.1 1.5-1.4 5.1-.8 3.3-.3 .7-.5 .7-6 17.5 1.9 .1-.1 1.7-3.1-.2 1.1 1.4-1.3 1.1zM49.6 17.1l.6 1.7-1.5 1.9 .4 .4 1.8-2.1-.7-2.1zM48.1 28.3l.5 1.8-1.7 1.8 .4 .4 1.9-2-.6-2.2zM37.9 41.7l1.7-1.5-.4-.4-1.7 1.4zM42.6 38.7l-1.5 2.8 1.1 2-1.3 2.6 .5 .2 1.5-2.8-1.1-2 1.4-2.5z"/></svg><span>wykonanie: <b>Wylinka</b></span></a>
+    </div>
+  </div>
+</footer>
+
+<div class="mob" id="mob">
+  <a href="tel:+48781504876"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>Zadzwoń</a>
+  <a href="#wypozyczalnia">Wynajmij auto</a>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+  <button class="x" type="button" aria-label="Zamknij"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+  <button class="lw" type="button" aria-label="Poprzednie"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <img alt="">
+  <button class="pw" type="button" aria-label="Następne"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7"/></svg></button>
+</div>
+
+<script>
+(function(){
+  var b=document.body,bur=document.querySelector('.burger'),mp=document.querySelector('.mpanel');
+  function zamknij(){b.classList.remove('menu-on');mp.classList.remove('on');bur.setAttribute('aria-expanded','false')}
+  bur.addEventListener('click',function(){var on=!mp.classList.contains('on');mp.classList.toggle('on',on);b.classList.toggle('menu-on',on);bur.setAttribute('aria-expanded',on)});
+  mp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',zamknij)});
+
+  var mob=document.getElementById('mob'),cta=document.getElementById('hero-cta');
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(e){mob.classList.toggle('widac',!e[0].isIntersecting&&e[0].boundingClientRect.top<0)}).observe(cta);
+    var linki=document.querySelectorAll('.menu a'),sek=[].map.call(linki,function(a){return document.querySelector(a.getAttribute('href'))});
+    var io=new IntersectionObserver(function(en){en.forEach(function(e){if(e.isIntersecting){var i=sek.indexOf(e.target);linki.forEach(function(l,k){l.classList.toggle('akt',k===i)})}})},{rootMargin:'-45% 0px -50% 0px'});
+    sek.forEach(function(s){io.observe(s)});
+  }
+
+  // przesuwanie mysza
+  function ciagnij(el){var x0,s0,ruch=false;
+    el.addEventListener('pointerdown',function(e){if(e.pointerType!=='mouse')return;x0=e.clientX;s0=el.scrollLeft;ruch=false;el.classList.add('ciag');
+      function mv(ev){var d=ev.clientX-x0;if(Math.abs(d)>4)ruch=true;el.scrollLeft=s0-d}
+      function up(){el.classList.remove('ciag');window.removeEventListener('pointermove',mv);window.removeEventListener('pointerup',up)}
+      window.addEventListener('pointermove',mv);window.addEventListener('pointerup',up)});
+    el.addEventListener('click',function(e){if(ruch){e.preventDefault();e.stopPropagation();ruch=false}},true);
+  }
+  var tor=document.getElementById('tor'),gal=document.getElementById('galeria');
+  ciagnij(tor);ciagnij(gal);
+  document.querySelectorAll('.nawi button').forEach(function(bt){bt.addEventListener('click',function(){var k=tor.querySelector('.auto');tor.scrollBy({left:(k.offsetWidth+24)*+bt.dataset.kier,behavior:'smooth'})})});
+
+  // lightbox
+  var lb=document.getElementById('lb'),lim=lb.querySelector('img'),zd=[].slice.call(gal.querySelectorAll('button')),i=0;
+  function pokaz(n){i=(n+zd.length)%zd.length;lim.src=zd[i].dataset.duze;lim.alt=zd[i].querySelector('img').alt;lb.classList.add('on')}
+  zd.forEach(function(z,n){z.addEventListener('click',function(){pokaz(n)})});
+  lb.querySelector('.x').addEventListener('click',function(){lb.classList.remove('on')});
+  lb.querySelector('.lw').addEventListener('click',function(){pokaz(i-1)});
+  lb.querySelector('.pw').addEventListener('click',function(){pokaz(i+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('on')});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')pokaz(i-1);if(e.key==='ArrowRight')pokaz(i+1)});
+  var tx=0;lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',function(e){var d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)pokaz(d<0?i+1:i-1)});
+
+  // mapa ladowana przy przewinieciu
+  var mapa=document.getElementById('mapa');
+  function wstawMape(){if(mapa.firstChild)return;mapa.innerHTML='<iframe title="Mapa dojazdu CAR SERWIS" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Baka%C5%82arzewska%2084A%2C%2016-400%20Suwa%C5%82ki&z=15&output=embed"></iframe>'}
+  if('IntersectionObserver' in window){var mo=new IntersectionObserver(function(e){if(e[0].isIntersecting){wstawMape();mo.disconnect()}},{rootMargin:'400px'});mo.observe(mapa)}else{wstawMape()}
+})();
+</script>
+</body>
+</html>
